@@ -37,6 +37,7 @@ virtwhat=$(virt-what)
 if [[ $virtwhat = kvm ]]; then
   echo "Found Proxmox"
   apt-get -y install qemu-guest-agent
+  service qemu-guest-agent start
 fi
 apt-get -y purge virt-what
 
