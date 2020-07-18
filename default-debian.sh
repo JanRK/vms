@@ -17,7 +17,7 @@ apt-get update
 # Default packages
 apt-get update
 apt-get upgrade -y
-apt-get -y install openssh-server sudo curl wget httpie nano unattended-upgrades software-properties-common unzip p7zip apt-transport-https ca-certificates dirmngr gnupg
+apt-get -y install openssh-server sudo curl wget httpie nano unattended-upgrades software-properties-common unzip p7zip ca-certificates dirmngr gnupg
 
 
 # Setup SSH
