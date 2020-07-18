@@ -1,6 +1,12 @@
 #!/bin/bash
 # wget -O - https://raw.githubusercontent.com/JanRK/vms/master/default-debain.sh | bash
 
+
+# Skip translations
+sh -c "echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/99translations"
+rm /var/lib/apt/lists/*
+
+
 # Default packages
 apt-get update && apt-get upgrade -y
 apt-get -y install openssh-server sudo curl wget httpie nano unattended-upgrades software-properties-common unzip p7zip apt-transport-https ca-certificates dirmngr gnupg
@@ -9,6 +15,7 @@ apt-get -y install openssh-server sudo curl wget httpie nano unattended-upgrades
 # Switch to https repos
 sed -i 's|http://ftp.acc.umu.se|https://ftp.acc.umu.se|g' /etc/apt/sources.list
 apt-get update
+
 
 # Setup SSH
 mkdir -p /home/jan/.ssh
@@ -24,10 +31,6 @@ if [[ $(virt-what) = kvm ]]; then
   apt-get -y install qemu-guest-agent
 fi
 apt-get -y purge virt-what
-
-
-# Skip translations
-sh -c "echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/99translations"
 
 
 # unattended-upgrades
