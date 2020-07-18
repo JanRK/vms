@@ -4,17 +4,20 @@
 
 # Skip translations
 sh -c "echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/99translations"
-rm /var/lib/apt/lists/*
-
-
-# Default packages
-apt-get update && apt-get upgrade -y
-apt-get -y install openssh-server sudo curl wget httpie nano unattended-upgrades software-properties-common unzip p7zip apt-transport-https ca-certificates dirmngr gnupg
+rm -r /var/lib/apt/lists
 
 
 # Switch to https repos
+apt-get update
+apt-get -y install apt-transport-https
 sed -i 's|http://ftp.acc.umu.se|https://ftp.acc.umu.se|g' /etc/apt/sources.list
 apt-get update
+
+
+# Default packages
+apt-get update
+apt-get upgrade -y
+apt-get -y install openssh-server sudo curl wget httpie nano unattended-upgrades software-properties-common unzip p7zip apt-transport-https ca-certificates dirmngr gnupg
 
 
 # Setup SSH
