@@ -33,7 +33,8 @@ service sshd restart
 
 # Install Hypervisor tools
 apt-get -y install virt-what
-if [[ $(virt-what) = kvm ]]; then
+virtwhat=$(virt-what)
+if [[ $virtwhat = kvm ]]; then
   echo "Found Proxmox"
   apt-get -y install qemu-guest-agent
 fi
