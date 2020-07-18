@@ -22,10 +22,13 @@ apt-get -y install openssh-server sudo curl wget httpie nano unattended-upgrades
 
 
 # Setup SSH
+adduser jan sudo
 mkdir -p /home/jan/.ssh
 chmod 700 /home/jan/.ssh
 curl https://github.com/janrk.keys >> /home/jan/.ssh/authorized_keys
 chmod 644 /home/jan/.ssh/authorized_keys
+chown -R jan:jan /home/jan/.ssh
+service sshd restart
 
 
 # Install Hypervisor tools
