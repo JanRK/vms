@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# wget -O - https://raw.githubusercontent.com/JanRK/vms/master/default-debain.sh | bash
 
 # Default packages
 apt-get update && apt-get upgrade -y
@@ -11,7 +11,7 @@ sed -i 's|http://ftp.acc.umu.se|https://ftp.acc.umu.se|g' /etc/apt/sources.list
 
 
 # Setup SSH
-mkdir /home/jan/.ssh
+mkdir -p /home/jan/.ssh
 chmod 700 /home/jan/.ssh
 curl https://github.com/janrk.keys >> /home/jan/.ssh/authorized_keys
 chmod 644 /home/jan/.ssh/authorized_keys
