@@ -1,5 +1,6 @@
 #!/bin/bash
-# wget -O - https://raw.githubusercontent.com/JanRK/vms/master/default-debain.sh | bash
+# wget -O - https://raw.githubusercontent.com/JanRK/vms/master/default-debian.sh | bash
+# wget -O - https://bit.ly/398iwiM | bash
 
 
 # Skip translations
