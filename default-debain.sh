@@ -8,7 +8,7 @@ apt-get -y install openssh-server sudo curl wget httpie nano unattended-upgrades
 
 # Switch to https repos
 sed -i 's|http://ftp.acc.umu.se|https://ftp.acc.umu.se|g' /etc/apt/sources.list
-
+apt-get update
 
 # Setup SSH
 mkdir -p /home/jan/.ssh
