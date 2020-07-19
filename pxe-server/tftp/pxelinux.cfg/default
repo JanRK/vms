@@ -5,10 +5,10 @@ PROMPT 0
 TIMEOUT 300 # 30 seconds
 MENU IMMEDIATE
 
-LABEL deb
+LABEL debian
   MENU LABEL ^Debian based operating systems
-  KERNEL menu.c32
-  APPEND pxelinux.cfg/deb.cfg
+  KERNEL vesamenu.c32
+  APPEND pxelinux.cfg/debian.cfg
 
   text help
                                         The majority of GNU/Linux
@@ -26,12 +26,12 @@ LABEL memtest420
                                         most hardware including AMD.
   endtext
 
-LABEL memtest501
-  MENU LABEL Mem^test86+ v5.01
-  LINUX memtest/memtest501.bin
+LABEL memtest531b
+  MENU LABEL Mem^test86+ v5.31b
+  LINUX memtest/memtest531b.bin
 
   text help
-                                        Memtest86+ v5.01 is faster
+                                        Memtest86+ v5.31b is faster
                                         and more thorough than v4.20
                                         but does not always work.
   endtext
