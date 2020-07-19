@@ -38,6 +38,10 @@ if [[ $virtwhat = kvm ]]; then
   echo "Found Proxmox"
   apt-get -y install qemu-guest-agent
   service qemu-guest-agent start
+
+  # Enable serial port
+  systemctl enable serial-getty@ttyS0.service
+  systemctl start serial-getty@ttyS0.service
 fi
 apt-get -y purge virt-what
 
