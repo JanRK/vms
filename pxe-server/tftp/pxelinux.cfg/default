@@ -1,4 +1,4 @@
-DEFAULT menu.c32
+DEFAULT vesamenu.c32
 MENU TITLE JK PXE Server
 NOHALT 1
 PROMPT 0
