@@ -12,6 +12,22 @@ echo Updated version.....${latest_version}
 echo
 echo Attempting to chain to latest version...
 chain --autofree http://pxe.ak.local/ipxe.lkrn ||
-:version_up2date
 
+:version_up2date
+menu Please select
+item --key x netbootxyz boot.netboot.xyz [x]
+item --key s shell iPXE shell [s]
+choose ver || exit 0
+goto ${ver}
+exit 0
+
+# boot.netboot.xyz
+:netbootxyz
+imgtrust --allow
+chain https://boot.netboot.xyz/
+exit
+
+
+:shell
 shell
+exit
