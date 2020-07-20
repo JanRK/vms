@@ -5,6 +5,14 @@ PROMPT 0
 TIMEOUT 300 # 30 seconds
 MENU IMMEDIATE
 
+
+LABEL mxp14
+  MENU LABEL Mini WinXP HBCD 14 - AUTOSTART NETWORK & TEAMVIEWER
+  kernel memdisk
+  append iso
+  initrd /images/mxp14.iso
+
+
 LABEL debian
   MENU LABEL ^Debian based operating systems
   KERNEL vesamenu.c32
