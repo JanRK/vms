@@ -1,0 +1,17 @@
+#!ipxe
+
+:version_check
+set latest_version 1.20.1+ (g3662)
+echo ${cls}
+iseq ${version} ${latest_version} && goto version_up2date ||
+echo
+echo Updated version of iPXE is available:
+echo
+echo Running version.....${version}
+echo Updated version.....${latest_version}
+echo
+echo Attempting to chain to latest version...
+chain --autofree http://pxe.ak.local/ipxe.lkrn ||
+:version_up2date
+
+shell
