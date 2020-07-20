@@ -11,7 +11,7 @@ apt-get -y install git gcc binutils make perl liblzma-dev mtools
 
 git clone git://git.ipxe.org/ipxe.git
 ipxedir=$(pwd)/ipxe/src
-cd ipxe/src
+cd ipxedir
 TAB=$'\t'
 sed -i "s|#undef${TAB}DOWNLOAD_PROTO_HTTPS|#define${TAB}DOWNLOAD_PROTO_HTTPS|g" config/general.h
 sed -i "s|#undef${TAB}DOWNLOAD_PROTO_NFS|#define${TAB}DOWNLOAD_PROTO_NFS|g" config/general.h

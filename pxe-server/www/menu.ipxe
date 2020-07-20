@@ -11,7 +11,7 @@ echo Running version.....${version}
 echo Updated version.....${latest_version}
 echo
 echo Attempting to chain to latest version...
-chain --autofree http://pxe.ak.local/ipxe.lkrn ||
+chain --autofree http://pxe.ak.local/undionly.kpxe ||
 
 :version_up2date
 menu Please select
