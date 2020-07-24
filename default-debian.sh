@@ -10,7 +10,7 @@ rm -r /var/lib/apt/lists
 
 # Switch to https repos
 apt-get update
-apt-get -y install apt-transport-https
+apt-get -y install apt-transport-https ca-certificates
 sed -i 's|http://ftp.acc.umu.se|https://ftp.acc.umu.se|g' /etc/apt/sources.list
 apt-get update
 
