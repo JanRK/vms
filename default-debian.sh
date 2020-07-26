@@ -43,6 +43,11 @@ if [[ $virtwhat = kvm ]]; then
   systemctl enable serial-getty@ttyS0.service
   systemctl start serial-getty@ttyS0.service
 fi
+if [[ $virtwhat = vmware ]]; then
+  echo "Found VMware"
+  apt-get -y install open-vm-tools
+  service open-vm-tools start
+fi
 apt-get -y purge virt-what
 
 
