@@ -42,6 +42,7 @@ service tftpd-hpa restart
 
 # nginx config
 sed -i 's|/var/www/html|/srv/pxe/www|g' /etc/nginx/sites-enabled/default
+sed -i '/First attempt to/iautoindex on;' /etc/nginx/sites-enabled/default
 service nginx restart
 # wget -O /srv/pxe/www/ipxe.lkrn http://boot.ipxe.org/ipxe.lkrn 
 cp $ipxedir/bin/undionly.kpxe /srv/pxe/www/undionly.kpxe
