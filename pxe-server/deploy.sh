@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# wget -O - https://raw.githubusercontent.com/JanRK/vms/master/pxe-server/deploy.sh | bash
 # wget -O - https://bit.ly/3eVi0WP | bash
 
 wget -O - https://raw.githubusercontent.com/JanRK/vms/master/default-debian.sh | bash
