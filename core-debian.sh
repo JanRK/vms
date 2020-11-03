@@ -10,6 +10,14 @@ rm -r /var/lib/apt/lists
 apt-get update
 apt-get -y install apt-transport-https ca-certificates
 sed -i 's|http://ftp.acc.umu.se|https://ftp.acc.umu.se|g' /etc/apt/sources.list
+sed -i 's|http://ftp.debian.org|https://ftp.acc.umu.se|g' /etc/apt/sources.list
+sed -i 's|http://deb.debian.org|https://ftp.acc.umu.se|g' /etc/apt/sources.list
+sed -i 's|http://storage.googleapis.com|https://storage.googleapis.com|g' /etc/apt/sources.list.d/bazel.list
+sed -i 's|http://packages.cloud.google.com|https://packages.cloud.google.com|g' /etc/apt/sources.list.d/gcsfuse.list
+sed -i 's|http://packages.cloud.google.com|https://packages.cloud.google.com|g' /etc/apt/sources.list.d/google-cloud-sdk.list
+sed -i 's|http://apt.llvm.org|https://apt.llvm.org|g' /etc/apt/sources.list.d/llvm.list
+sed -i 's|http://repo.mysql.com|https://repo.mysql.com|g' /etc/apt/sources.list.d/mysql.list
+sed -i 's|http://apt.postgresql.org|https://apt.postgresql.org|g' /etc/apt/sources.list.d/pgdg.list
 apt-get update
 
 
