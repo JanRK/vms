@@ -12,9 +12,10 @@ apt-get -y install apt-transport-https ca-certificates
 
 aptlists=$(find /etc/apt -type f -name "*.list")
 for filename in $aptlists; do
-  sed -i 's|http://ftp.acc.umu.se|https://ftp.acc.umu.se|g' $filename
-  sed -i 's|http://ftp.debian.org|https://ftp.acc.umu.se|g' $filename
-  sed -i 's|http://deb.debian.org|https://ftp.acc.umu.se|g' $filename
+  sed -i 's|http://ftp.acc.umu.se|https://deb.debian.org|g' $filename
+  sed -i 's|https://ftp.acc.umu.se|https://deb.debian.org|g' $filename
+  sed -i 's|http://ftp.debian.org|https://deb.debian.org|g' $filename
+  sed -i 's|http://deb.debian.org|https://deb.debian.org|g' $filename
   sed -i 's|http://storage.googleapis.com|https://storage.googleapis.com|g' $filename
   sed -i 's|http://packages.cloud.google.com|https://packages.cloud.google.com|g' $filename
   sed -i 's|http://apt.llvm.org|https://apt.llvm.org|g' $filename
