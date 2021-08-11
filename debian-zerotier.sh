@@ -59,6 +59,7 @@ echo '-----END PGP PUBLIC KEY BLOCK-----' >>/usr/share/keyrings/zt-gpg-key
 . /etc/os-release
 echo "deb [signed-by=/usr/share/keyrings/zt-gpg-key] https://download.zerotier.com/debian/$VERSION_CODENAME $VERSION_CODENAME main" > /etc/apt/sources.list.d/zerotier.list
 
+apt-get update
 apt-get install -y zerotier-one
 
 systemctl enable zerotier-one
