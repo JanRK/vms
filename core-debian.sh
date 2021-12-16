@@ -13,7 +13,6 @@ apt-get -y install apt-transport-https ca-certificates
 aptlists=$(find /etc/apt -type f -name "*.list")
 for filename in $aptlists; do
   sed -i 's|http://ftp.acc.umu.se|https://deb.debian.org|g' $filename
-  sed -i 's|https://ftp.acc.umu.se|https://deb.debian.org|g' $filename
   sed -i 's|http://ftp.debian.org|https://deb.debian.org|g' $filename
   sed -i 's|http://deb.debian.org|https://deb.debian.org|g' $filename
   sed -i 's|http://storage.googleapis.com|https://storage.googleapis.com|g' $filename
@@ -23,6 +22,7 @@ for filename in $aptlists; do
   sed -i 's|http://apt.postgresql.org|https://apt.postgresql.org|g' $filename
   sed -i 's|http://raspbian.raspberrypi.org/raspbian/|https://ftp.acc.umu.se/mirror/raspbian/raspbian/|g' $filename
   sed -i 's|http://archive.raspberrypi.org/debian/|https://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/|g' $filename
+  sed -i 's|https://deb.debian.org/mirror/raspbian/raspbian/|https://ftp.acc.umu.se/mirror/raspbian/raspbian/|g' $filename
 done
 apt-get update
 
