@@ -33,12 +33,20 @@ apt-get -y install openssh-server sudo curl wget nano software-properties-common
 
 
 # Setup SSH
-adduser jan sudo
-mkdir -p /home/jan/.ssh
-chmod 700 /home/jan/.ssh
-wget -O /home/jan/.ssh/authorized_keys https://github.com/janrk.keys
-chmod 644 /home/jan/.ssh/authorized_keys
-chown -R jan:jan /home/jan/.ssh
+createUser="jan"
+if id $createUser &>/dev/null; then
+    # user found
+else
+    # echo 'user not found'
+    useradd --create-home --shell /bin/bash $createUser
+fi
+
+adduser $createUser sudo
+mkdir -p /home/$createUser/.ssh
+chmod 700 /home/$createUser/.ssh
+wget -O /home/$createUser/.ssh/authorized_keys https://github.com/janrk.keys
+chmod 644 /home/$createUser/.ssh/authorized_keys
+chown -R $createUser:$createUser /home/$createUser/.ssh
 service sshd restart
 
 
