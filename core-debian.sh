@@ -21,6 +21,7 @@ for filename in $aptlists; do
   sed -i 's|http://apt.llvm.org|https://apt.llvm.org|g' $filename
   sed -i 's|http://repo.mysql.com|https://repo.mysql.com|g' $filename
   sed -i 's|http://apt.postgresql.org|https://apt.postgresql.org|g' $filename
+  sed -i 's|http://raspbian.raspberrypi.org/raspbian/|https://ftp.acc.umu.se/mirror/raspbian/raspbian/|g' $filename
 done
 apt-get update
 
