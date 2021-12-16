@@ -22,6 +22,7 @@ for filename in $aptlists; do
   sed -i 's|http://repo.mysql.com|https://repo.mysql.com|g' $filename
   sed -i 's|http://apt.postgresql.org|https://apt.postgresql.org|g' $filename
   sed -i 's|http://raspbian.raspberrypi.org/raspbian/|https://ftp.acc.umu.se/mirror/raspbian/raspbian/|g' $filename
+  sed -i 's|http://archive.raspberrypi.org/debian/|https://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/|g' $filename
 done
 apt-get update
 
@@ -35,9 +36,9 @@ apt-get -y install openssh-server sudo curl wget nano software-properties-common
 # Setup SSH
 createUser="jan"
 if id $createUser &>/dev/null; then
-    # user found
+    echo "user $createUser found"
 else
-    # echo 'user not found'
+    echo "user $createUser not found"
     useradd --create-home --shell /bin/bash $createUser
 fi
 
