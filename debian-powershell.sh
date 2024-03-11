@@ -1,3 +1,7 @@
+#!/bin/bash
+# wget -O - https://raw.githubusercontent.com/JanRK/vms/master/debian-powershell.sh | bash
+
+# Install powershell
 apt-get update
 apt-get install -y --no-install-recommends gnupg wget ca-certificates
 wget --directory-prefix=/usr/share/keyrings https://packages.microsoft.com/keys/microsoft.asc

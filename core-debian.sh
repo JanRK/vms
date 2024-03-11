@@ -68,4 +68,8 @@ if [[ $virtwhat = vmware ]]; then
   apt-get -y install open-vm-tools
   service open-vm-tools start
 fi
+if [[ $virtwhat = hyperv ]]; then
+  echo "Found HyperV"
+  # No tools needed.
+fi
 apt-get -y purge virt-what

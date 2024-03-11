@@ -8,7 +8,7 @@ apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io
 
 
-# COMPOSE_VERSION=1.27.4
+# COMPOSE_VERSION=v2.24.0
 # echo $COMPOSE_VERSION
 # sudo curl -L "https://github.com/docker/compose/releases/download/$COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 # sudo chmod +x /usr/local/bin/docker-compose
