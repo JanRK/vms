@@ -23,6 +23,7 @@ for filename in $aptlists; do
   sed -i 's|https\?://apt.postgresql.org|https://apt.postgresql.org|g' $filename
   sed -i 's|https\?://raspbian.raspberrypi.org/raspbian/|https://mirrors.dotsrc.org/raspbian/raspbian/|g' $filename
   sed -i 's|https\?://archive.raspberrypi.org/debian/|https://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/|g' $filename
+  sed -i 's|https\?://apt.armbian.com|https://apt.armbian.com|g' $filename
 done
 apt-get update
 
