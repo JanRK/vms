@@ -1,5 +1,6 @@
 #!/bin/bash
 # wget -O - https://raw.githubusercontent.com/JanRK/vms/master/core-debian.sh | bash
+# wget -O - https://bit.ly/core-debian | bash
 
 # Skip translations
 sh -c "echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/99translations"
