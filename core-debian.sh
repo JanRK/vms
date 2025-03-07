@@ -1,6 +1,7 @@
 #!/bin/bash
 # wget -O - https://raw.githubusercontent.com/JanRK/vms/master/core-debian.sh | bash
 # wget -O - https://bit.ly/core-debian | bash
+# wget -L -O - https://s.janrk.org/debian | bash
 
 # Skip translations
 sh -c "echo 'Acquire::Languages "none";' > /etc/apt/apt.conf.d/99translations"
@@ -25,6 +26,7 @@ for filename in $aptlists; do
   sed -i 's|https\?://raspbian.raspberrypi.org/raspbian/|https://mirrors.dotsrc.org/raspbian/raspbian/|g' $filename
   sed -i 's|https\?://archive.raspberrypi.org/debian/|https://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/|g' $filename
   sed -i 's|https\?://apt.armbian.com|https://apt.armbian.com|g' $filename
+  sed -i 's|https\?://security.debian.org/debian-security|https://deb.debian.org/debian-security|g' $filename
 done
 apt-get update
 
