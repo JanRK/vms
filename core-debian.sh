@@ -12,7 +12,7 @@ rm -r /var/lib/apt/lists
 apt-get update
 apt-get -y install apt-transport-https ca-certificates
 
-aptlists=$(find /etc/apt -type f -name "*.list")
+aptlists=$(find /etc/apt -type f \( -name "*.list" -o -name "*.sources" \))
 for filename in $aptlists; do
   sed -i 's|https\?://ftp.acc.umu.se|https://deb.debian.org|g' $filename
   sed -i 's|https\?://ftp.dk.debian.org|https://deb.debian.org|g' $filename
