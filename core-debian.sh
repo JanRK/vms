@@ -26,6 +26,7 @@ for filename in $aptlists; do
   sed -i 's|https\?://raspbian.raspberrypi.org/raspbian/|https://mirrors.dotsrc.org/raspbian/raspbian/|g' $filename
   sed -i 's|https\?://archive.raspberrypi.org/debian/|https://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/|g' $filename
   sed -i 's|https\?://apt.armbian.com|https://apt.armbian.com|g' $filename
+  sed -i 's|https\?://archive.raspberrypi.com/debian/|https://mirrors.ustc.edu.cn/archive.raspberrypi.org/debian/|g' $filename
   sed -i 's|https\?://security.debian.org/debian-security|https://deb.debian.org/debian-security|g' $filename
   sed -i 's|https\?://security.ubuntu.com/ubuntu|https://security.ubuntu.com/ubuntu|g' $filename
   sed -i 's|https\?://eu-stockholm-1-ad-1.clouds.archive.ubuntu.com/ubuntu|https://eu-stockholm-1-ad-1.clouds.archive.ubuntu.com/ubuntu|g' $filename
